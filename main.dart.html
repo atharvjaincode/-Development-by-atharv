@@ -1,0 +1,112 @@
+<html>
+<head>
+<title>main.dart</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #a9b7c6;}
+.s1 { color: #6a8759;}
+.s2 { color: #cc7832;}
+.s3 { color: #6897bb;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+main.dart</font>
+</center></td></tr></table>
+<pre><span class="s0">import </span><span class="s1">'package:flutter/material.dart'</span><span class="s2">;</span>
+<span class="s0">import </span><span class="s1">'package:flutter/services.dart'</span><span class="s2">;</span>
+
+<span class="s2">void </span><span class="s0">main() {</span>
+  <span class="s0">runApp(CounterApp())</span><span class="s2">;</span>
+<span class="s0">}</span>
+
+<span class="s2">class </span><span class="s0">CounterApp </span><span class="s2">extends </span><span class="s0">StatelessWidget {</span>
+  <span class="s0">@override</span>
+  <span class="s0">Widget build(BuildContext context) {</span>
+    <span class="s2">return </span><span class="s0">MaterialApp(</span>
+      <span class="s0">title: </span><span class="s1">'Counter'</span><span class="s2">,</span>
+      <span class="s0">theme: ThemeData(</span>
+        <span class="s0">primarySwatch: Colors.red</span><span class="s2">,</span>
+      <span class="s0">)</span><span class="s2">,</span>
+      <span class="s0">home: CounterPage()</span><span class="s2">,</span>
+    <span class="s0">)</span><span class="s2">;</span>
+  <span class="s0">}</span>
+<span class="s0">}</span>
+
+<span class="s2">class </span><span class="s0">CounterPage </span><span class="s2">extends </span><span class="s0">StatefulWidget {</span>
+  <span class="s0">@override</span>
+  <span class="s0">_CounterPageState createState() =&gt; _CounterPageState()</span><span class="s2">;</span>
+<span class="s0">}</span>
+
+<span class="s2">class </span><span class="s0">_CounterPageState </span><span class="s2">extends </span><span class="s0">State&lt;CounterPage&gt; {</span>
+  <span class="s0">int _counter = </span><span class="s3">0</span><span class="s2">;</span>
+
+  <span class="s2">void </span><span class="s0">_incrementCounter() {</span>
+    <span class="s0">setState(() {</span>
+      <span class="s0">_counter++</span><span class="s2">;</span>
+    <span class="s0">})</span><span class="s2">;</span>
+  <span class="s0">}</span>
+
+  <span class="s2">void </span><span class="s0">_decrementCounter() {</span>
+    <span class="s0">setState(() {</span>
+      <span class="s0">_counter--</span><span class="s2">;</span>
+    <span class="s0">})</span><span class="s2">;</span>
+  <span class="s0">}</span>
+
+  <span class="s0">@override</span>
+  <span class="s0">Widget build(BuildContext context) {</span>
+    <span class="s2">return </span><span class="s0">Scaffold(</span>
+      <span class="s0">appBar: AppBar(</span>
+        <span class="s0">title: Text(</span><span class="s1">'Counter App'</span><span class="s0">)</span><span class="s2">,</span>
+      <span class="s0">)</span><span class="s2">,</span>
+      <span class="s0">body: Center(</span>
+        <span class="s0">child: Column(</span>
+          <span class="s0">mainAxisAlignment: MainAxisAlignment.center</span><span class="s2">,</span>
+          <span class="s0">children: &lt;Widget&gt;[</span>
+            <span class="s0">Text(</span>
+              <span class="s1">'Counter Value:'</span><span class="s2">,</span>
+              <span class="s0">style: TextStyle(fontSize: </span><span class="s3">20</span><span class="s0">)</span><span class="s2">,</span>
+            <span class="s0">)</span><span class="s2">,</span>
+            <span class="s0">Container(</span>
+              <span class="s0">width: </span><span class="s3">100</span><span class="s2">,</span>
+              <span class="s0">height: </span><span class="s3">50</span><span class="s2">,</span>
+              <span class="s0">decoration: BoxDecoration(</span>
+                <span class="s0">color: Colors.lightBlue[</span><span class="s3">100</span><span class="s0">]</span><span class="s2">,</span>
+                <span class="s0">borderRadius: BorderRadius.circular(</span><span class="s3">8</span><span class="s0">)</span><span class="s2">,</span>
+              <span class="s0">)</span><span class="s2">,</span>
+              <span class="s0">child: Center(</span>
+                <span class="s0">child: Text(</span>
+                  <span class="s1">'</span><span class="s0">$_counter</span><span class="s1">'</span><span class="s2">,</span>
+                  <span class="s0">style: TextStyle(</span>
+                    <span class="s0">fontSize: </span><span class="s3">24</span><span class="s2">,</span>
+                    <span class="s0">fontWeight: FontWeight.bold</span><span class="s2">,</span>
+                  <span class="s0">)</span><span class="s2">,</span>
+                <span class="s0">)</span><span class="s2">,</span>
+              <span class="s0">)</span><span class="s2">,</span>
+            <span class="s0">)</span><span class="s2">,</span>
+          <span class="s0">]</span><span class="s2">,</span>
+        <span class="s0">)</span><span class="s2">,</span>
+      <span class="s0">)</span><span class="s2">,</span>
+      <span class="s0">floatingActionButton: Row(</span>
+        <span class="s0">mainAxisAlignment: MainAxisAlignment.end</span><span class="s2">,</span>
+        <span class="s0">children: [</span>
+          <span class="s0">FloatingActionButton(</span>
+            <span class="s0">onPressed: _incrementCounter</span><span class="s2">,</span>
+            <span class="s0">tooltip: </span><span class="s1">'Increment'</span><span class="s2">,</span>
+            <span class="s0">child: Icon(Icons.add)</span><span class="s2">,</span>
+          <span class="s0">)</span><span class="s2">,</span>
+          <span class="s0">SizedBox(width: </span><span class="s3">20</span><span class="s0">)</span><span class="s2">,</span>
+          <span class="s0">FloatingActionButton(</span>
+            <span class="s0">onPressed: _decrementCounter</span><span class="s2">,</span>
+            <span class="s0">tooltip: </span><span class="s1">'Decrement'</span><span class="s2">,</span>
+            <span class="s0">child: Icon(Icons.remove)</span><span class="s2">,</span>
+          <span class="s0">)</span><span class="s2">,</span>
+        <span class="s0">]</span><span class="s2">,</span>
+      <span class="s0">)</span><span class="s2">,</span>
+    <span class="s0">)</span><span class="s2">;</span>
+  <span class="s0">}</span>
+<span class="s0">}</span></pre>
+</body>
+</html>
